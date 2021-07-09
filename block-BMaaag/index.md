@@ -16,7 +16,22 @@ Write code to:-
 
 - insert multiple document using insertMany command
 
-    db.himalayas.insertMany({name: 'Dhauldhar range', height: '4000 mtrs'}, {name : "mountEverest", height : "2000 mtrs"})
+    let listOfHimalayas = [
+        {
+            name: 'Dhauldhar range',
+            height: '4000 mtrs'
+         },
+
+         {
+            name : "mountEverest", 
+            height : "2000 mtrs" 
+         }
+
+    ]
+
+    db.himalayas.insertMany(listOfHimalayas)
+    
+    <!-- db.himalayas.insertMany({name: 'Dhauldhar range', height: '4000 mtrs'}, {name : "mountEverest", height : "2000 mtrs"}) -->
 
 - find all documents from mountains
 
@@ -26,4 +41,4 @@ Write code to:-
 
     db.himalayas.findOne({name : "mountEverest"})
 
-    
+
