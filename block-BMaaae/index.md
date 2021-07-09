@@ -11,6 +11,10 @@ Write code to:-
 
 - create 3 collections named `cricket`, `football`, `TT` in sports databse.
 
+  -> db.createCollection('cricket')
+  -> db.createCollection('football')
+  -> db.createCollection('TT')
+
   
 
 - add multiple players in those collections which should have fields like `name`, `age` and `email` and `bid_price`.
@@ -45,7 +49,7 @@ Write code to:-
 
 - delete cricket collection completely.
 
-  -> db.cricket.remove()
+  -> db.cricket.remove({})
   -> db.cricket.drop()
 
 - delete sports database.
