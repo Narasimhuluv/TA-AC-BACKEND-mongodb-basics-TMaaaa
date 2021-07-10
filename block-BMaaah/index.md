@@ -74,11 +74,11 @@ let data = [
 
 6. 1. Find documents using title
 
-    db.articles.find({title : "all"}).pretty()
+    db.articles.find({title : "css"}).pretty()
 
 7. 2. Find documents using author's name field.
 
-    db.articles.find({author : {$in : {name : "Narasimha"}}})
+    db.articles.find({"author.name" : "Narasimhulu Vasam"})
 
 8. Find document using a specific tag.
 
@@ -86,7 +86,7 @@ let data = [
 
 9. Update title of a document using its \_id field.
 
-    db.artilces.update({title : "name"})
+    db.artilces.update({title : " css"}, {title : "Narasimha"})
 
 10. Update a author's name using article's title.
 
@@ -100,8 +100,10 @@ let data = [
 
 13. find an article using title and increment it's auhtor's age by 5.
 
+  db.data.update({title : "Narasimhulu Vasam"}, {$inc : {"author.age" : 5}})
+
 14. Delete a document using \_id field with `db.COLLECTION_NAME.remove()`.
-db.data.remove({_id: 'some_random_id'})
+db.data.remove({})
 
 // Sample data
 
@@ -221,7 +223,7 @@ Insert above data into database to perform below queries:-
 
 - Find all males who play cricket.
 
-  db.users.find().pretty()
+  db.users.find({gender : "Male" , sports : "cricket"}).pretty()
 
 - Update user with extra golf field in sports array whose name is "Steve Ortega".
 
@@ -233,4 +235,4 @@ Insert above data into database to perform below queries:-
 
 - Find all users whose name includes 'ri' in their name.
 
-  db.users.find({name : "ri"})
+  db.users.find({name : /ri/i})
